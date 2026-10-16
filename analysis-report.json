@@ -1,0 +1,2609 @@
+{
+  "pipeline": {
+    "name": "quality-gated-ppg-preprocessing",
+    "version": "0.1.0",
+    "configuration": {
+      "minimumUsableSeconds": 2.5,
+      "flatlineMinimumSamples": 10,
+      "flatlineTolerance": 1e-10,
+      "lowCutoffHz": 0.4,
+      "highCutoffHz": 12,
+      "firTaps": 401,
+      "qualityWindowSeconds": 5,
+      "maximumHighFrequencyRatio": 0.05,
+      "maximumLowFrequencyRatio": 0.35,
+      "maximumDerivativeOutlierRatio": 20,
+      "peakMinimumDistanceSeconds": 0.4,
+      "peakProminenceFraction": 0.15
+    },
+    "safetyNote": "This output is an engineering quality assessment, not a diagnosis or clinical decision."
+  },
+  "source": {
+    "schemaVersion": "1.0",
+    "samplingRateHz": 200,
+    "durationSeconds": 30,
+    "expectedSamplesPerRecording": 6000
+  },
+  "recordings": [
+    {
+      "recordingId": "S1",
+      "verdict": "review",
+      "samplingRateHz": 200,
+      "rawSampleCount": 6000,
+      "expectedSampleCount": 6000,
+      "issues": [],
+      "excludedIntervals": [
+        {
+          "start": 5949,
+          "end": 5991,
+          "reasons": [
+            "flatline"
+          ],
+          "startSeconds": 29.745,
+          "endSeconds": 29.955
+        }
+      ],
+      "usableSegments": [
+        {
+          "startSample": 0,
+          "endSample": 5949,
+          "durationSeconds": 29.745,
+          "windows": [
+            {
+              "startSample": 0,
+              "endSample": 1000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0087,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.159,
+                "standardDeviation": 0.4456
+              }
+            },
+            {
+              "startSample": 1000,
+              "endSample": 2000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0407,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 9.137,
+                "standardDeviation": 0.4541
+              }
+            },
+            {
+              "startSample": 2000,
+              "endSample": 3000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0117,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.2106,
+                "standardDeviation": 0.4472
+              }
+            },
+            {
+              "startSample": 3000,
+              "endSample": 4000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0378,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 6.7392,
+                "standardDeviation": 0.4277
+              }
+            },
+            {
+              "startSample": 4000,
+              "endSample": 5000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0375,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.5488,
+                "standardDeviation": 0.4899
+              }
+            },
+            {
+              "startSample": 5000,
+              "endSample": 5949,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0073,
+                "highFrequencyRatio": 0,
+                "derivativeOutlierRatio": 16.314,
+                "standardDeviation": 0.4715
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 36,
+            "medianBpm": 71.86,
+            "medianHeight": 1.5625,
+            "medianWidthSeconds": 0.3425,
+            "pulses": [
+              {
+                "peakOffsetSamples": 29,
+                "height": 1.3939,
+                "widthSeconds": 0.38
+              },
+              {
+                "peakOffsetSamples": 194,
+                "height": 1.5648,
+                "widthSeconds": 0.465
+              },
+              {
+                "peakOffsetSamples": 360,
+                "height": 1.7452,
+                "widthSeconds": 0.46
+              },
+              {
+                "peakOffsetSamples": 532,
+                "height": 1.4861,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.6383,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 869,
+                "height": 1.5536,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1047,
+                "height": 1.4722,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1211,
+                "height": 1.444,
+                "widthSeconds": 0.28
+              },
+              {
+                "peakOffsetSamples": 1387,
+                "height": 1.5075,
+                "widthSeconds": 0.27
+              },
+              {
+                "peakOffsetSamples": 1556,
+                "height": 1.9241,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1726,
+                "height": 1.5331,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1893,
+                "height": 1.3953,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 2057,
+                "height": 1.6209,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 2221,
+                "height": 1.5703,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2389,
+                "height": 1.5833,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 2552,
+                "height": 1.5816,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 2710,
+                "height": 1.5835,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 2878,
+                "height": 1.2809,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 3043,
+                "height": 1.5602,
+                "widthSeconds": 0.34
+              },
+              {
+                "peakOffsetSamples": 3206,
+                "height": 1.2212,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 3367,
+                "height": 1.3146,
+                "widthSeconds": 0.42
+              },
+              {
+                "peakOffsetSamples": 3530,
+                "height": 1.6633,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 3692,
+                "height": 1.4237,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 3865,
+                "height": 1.5714,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 4025,
+                "height": 1.6096,
+                "widthSeconds": 0.495
+              },
+              {
+                "peakOffsetSamples": 4193,
+                "height": 1.9782,
+                "widthSeconds": 0.28
+              },
+              {
+                "peakOffsetSamples": 4366,
+                "height": 1.4599,
+                "widthSeconds": 0.45
+              },
+              {
+                "peakOffsetSamples": 4530,
+                "height": 2.0861,
+                "widthSeconds": 0.38
+              },
+              {
+                "peakOffsetSamples": 4704,
+                "height": 1.5231,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 4877,
+                "height": 1.6907,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 5042,
+                "height": 1.4905,
+                "widthSeconds": 0.27
+              },
+              {
+                "peakOffsetSamples": 5214,
+                "height": 1.7254,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 5387,
+                "height": 1.5747,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 5556,
+                "height": 1.4924,
+                "widthSeconds": 0.405
+              },
+              {
+                "peakOffsetSamples": 5724,
+                "height": 1.4049,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 5891,
+                "height": 1.8255,
+                "widthSeconds": 0.315
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 36,
+            "medianBpm": 71.86,
+            "medianHeight": 1.528,
+            "medianWidthSeconds": 0.2875,
+            "pulses": [
+              {
+                "peakOffsetSamples": 30,
+                "height": 1.3694,
+                "widthSeconds": 0.455
+              },
+              {
+                "peakOffsetSamples": 195,
+                "height": 1.5732,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 361,
+                "height": 1.64,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 533,
+                "height": 1.4843,
+                "widthSeconds": 0.31
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.5523,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 870,
+                "height": 1.514,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "height": 1.4836,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "height": 1.4493,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "height": 1.4459,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "height": 1.8962,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "height": 1.569,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "height": 1.4751,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "height": 1.6228,
+                "widthSeconds": 0.365
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "height": 1.5605,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "height": 1.5279,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "height": 1.5916,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2712,
+                "height": 1.5945,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "height": 1.3686,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "height": 1.5379,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "height": 1.2747,
+                "widthSeconds": 0.405
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "height": 1.3007,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "height": 1.5097,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 3693,
+                "height": 1.4469,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "height": 1.528,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "height": 1.4585,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "height": 1.7564,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "height": 1.4779,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "height": 1.9007,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "height": 1.5607,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "height": 1.6036,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "height": 1.5028,
+                "widthSeconds": 0.35
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "height": 1.7148,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "height": 1.5843,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "height": 1.4954,
+                "widthSeconds": 0.435
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "height": 1.419,
+                "widthSeconds": 0.39
+              },
+              {
+                "peakOffsetSamples": 5892,
+                "height": 1.7064,
+                "widthSeconds": 0.23
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 36,
+            "medianTimingShiftMilliseconds": 5
+          }
+        }
+      ],
+      "limitations": [
+        "The pipeline does not interpolate missing samples or convert rejected intervals into pulse measurements.",
+        "Quality thresholds are engineering defaults and must be calibrated against labelled reference data before clinical use."
+      ]
+    },
+    {
+      "recordingId": "S2",
+      "verdict": "accepted",
+      "samplingRateHz": 200,
+      "rawSampleCount": 6000,
+      "expectedSampleCount": 6000,
+      "issues": [],
+      "excludedIntervals": [],
+      "usableSegments": [
+        {
+          "startSample": 0,
+          "endSample": 6000,
+          "durationSeconds": 30,
+          "windows": [
+            {
+              "startSample": 0,
+              "endSample": 1000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0445,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.3124,
+                "standardDeviation": 0.4569
+              }
+            },
+            {
+              "startSample": 1000,
+              "endSample": 2000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.1572,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 9.6936,
+                "standardDeviation": 0.4826
+              }
+            },
+            {
+              "startSample": 2000,
+              "endSample": 3000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0739,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.4824,
+                "standardDeviation": 0.4604
+              }
+            },
+            {
+              "startSample": 3000,
+              "endSample": 4000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0197,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 7.247,
+                "standardDeviation": 0.4323
+              }
+            },
+            {
+              "startSample": 4000,
+              "endSample": 5000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0703,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.3534,
+                "standardDeviation": 0.525
+              }
+            },
+            {
+              "startSample": 5000,
+              "endSample": 6000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.1068,
+                "highFrequencyRatio": 0,
+                "derivativeOutlierRatio": 17.4358,
+                "standardDeviation": 0.4848
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 36,
+            "medianBpm": 71.43,
+            "medianHeight": 1.5626,
+            "medianWidthSeconds": 0.415,
+            "pulses": [
+              {
+                "peakOffsetSamples": 30,
+                "height": 1.4606,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 193,
+                "height": 1.5351,
+                "widthSeconds": 0.455
+              },
+              {
+                "peakOffsetSamples": 361,
+                "height": 1.8327,
+                "widthSeconds": 0.495
+              },
+              {
+                "peakOffsetSamples": 532,
+                "height": 1.414,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.5854,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 868,
+                "height": 1.5144,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 1047,
+                "height": 1.5333,
+                "widthSeconds": 0.47
+              },
+              {
+                "peakOffsetSamples": 1211,
+                "height": 1.6907,
+                "widthSeconds": 0.455
+              },
+              {
+                "peakOffsetSamples": 1387,
+                "height": 1.5134,
+                "widthSeconds": 0.485
+              },
+              {
+                "peakOffsetSamples": 1556,
+                "height": 2.1495,
+                "widthSeconds": 0.38
+              },
+              {
+                "peakOffsetSamples": 1726,
+                "height": 1.426,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 1893,
+                "height": 1.402,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 2057,
+                "height": 1.5794,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 2221,
+                "height": 1.6829,
+                "widthSeconds": 0.46
+              },
+              {
+                "peakOffsetSamples": 2389,
+                "height": 1.5331,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2552,
+                "height": 1.7202,
+                "widthSeconds": 0.38
+              },
+              {
+                "peakOffsetSamples": 2710,
+                "height": 1.6724,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2878,
+                "height": 1.3202,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 3043,
+                "height": 1.5601,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 3206,
+                "height": 1.2238,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 3366,
+                "height": 1.3391,
+                "widthSeconds": 0.34
+              },
+              {
+                "peakOffsetSamples": 3530,
+                "height": 1.4595,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 3692,
+                "height": 1.4696,
+                "widthSeconds": 0.445
+              },
+              {
+                "peakOffsetSamples": 3865,
+                "height": 1.5658,
+                "widthSeconds": 0.45
+              },
+              {
+                "peakOffsetSamples": 4025,
+                "height": 1.8461,
+                "widthSeconds": 0.555
+              },
+              {
+                "peakOffsetSamples": 4193,
+                "height": 1.8664,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4366,
+                "height": 1.4846,
+                "widthSeconds": 0.455
+              },
+              {
+                "peakOffsetSamples": 4529,
+                "height": 1.9247,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 4704,
+                "height": 1.5749,
+                "widthSeconds": 0.51
+              },
+              {
+                "peakOffsetSamples": 4877,
+                "height": 1.8248,
+                "widthSeconds": 0.425
+              },
+              {
+                "peakOffsetSamples": 5042,
+                "height": 1.5596,
+                "widthSeconds": 0.49
+              },
+              {
+                "peakOffsetSamples": 5214,
+                "height": 1.9676,
+                "widthSeconds": 0.42
+              },
+              {
+                "peakOffsetSamples": 5387,
+                "height": 1.5945,
+                "widthSeconds": 0.465
+              },
+              {
+                "peakOffsetSamples": 5555,
+                "height": 1.5652,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 5724,
+                "height": 1.3848,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 5891,
+                "height": 1.9144,
+                "widthSeconds": 0.315
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 36,
+            "medianBpm": 71.86,
+            "medianHeight": 1.5616,
+            "medianWidthSeconds": 0.3175,
+            "pulses": [
+              {
+                "peakOffsetSamples": 30,
+                "height": 1.4323,
+                "widthSeconds": 0.495
+              },
+              {
+                "peakOffsetSamples": 195,
+                "height": 1.5938,
+                "widthSeconds": 0.435
+              },
+              {
+                "peakOffsetSamples": 362,
+                "height": 1.6673,
+                "widthSeconds": 0.45
+              },
+              {
+                "peakOffsetSamples": 533,
+                "height": 1.4536,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 704,
+                "height": 1.5728,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 870,
+                "height": 1.551,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "height": 1.5101,
+                "widthSeconds": 0.415
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "height": 1.5254,
+                "widthSeconds": 0.275
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "height": 1.4012,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "height": 1.8871,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "height": 1.477,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "height": 1.5721,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "height": 1.6077,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "height": 1.6443,
+                "widthSeconds": 0.27
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "height": 1.4629,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "height": 1.6236,
+                "widthSeconds": 0.28
+              },
+              {
+                "peakOffsetSamples": 2711,
+                "height": 1.5846,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "height": 1.3429,
+                "widthSeconds": 0.425
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "height": 1.5785,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "height": 1.271,
+                "widthSeconds": 0.435
+              },
+              {
+                "peakOffsetSamples": 3367,
+                "height": 1.3903,
+                "widthSeconds": 0.355
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "height": 1.4027,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 3694,
+                "height": 1.4618,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "height": 1.5106,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "height": 1.5367,
+                "widthSeconds": 0.415
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "height": 1.7083,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "height": 1.5056,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "height": 1.8887,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "height": 1.5907,
+                "widthSeconds": 0.475
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "height": 1.6389,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "height": 1.5274,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "height": 1.6969,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "height": 1.5994,
+                "widthSeconds": 0.445
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "height": 1.5848,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "height": 1.4197,
+                "widthSeconds": 0.42
+              },
+              {
+                "peakOffsetSamples": 5892,
+                "height": 1.7778,
+                "widthSeconds": 0.24
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 36,
+            "medianTimingShiftMilliseconds": 5
+          }
+        }
+      ],
+      "limitations": [
+        "The pipeline does not interpolate missing samples or convert rejected intervals into pulse measurements.",
+        "Quality thresholds are engineering defaults and must be calibrated against labelled reference data before clinical use."
+      ]
+    },
+    {
+      "recordingId": "S3",
+      "verdict": "review",
+      "samplingRateHz": 200,
+      "rawSampleCount": 6000,
+      "expectedSampleCount": 6000,
+      "issues": [],
+      "excludedIntervals": [],
+      "usableSegments": [
+        {
+          "startSample": 0,
+          "endSample": 6000,
+          "durationSeconds": 30,
+          "windows": [
+            {
+              "startSample": 0,
+              "endSample": 1000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0088,
+                "highFrequencyRatio": 0.1822,
+                "derivativeOutlierRatio": 4.5072,
+                "standardDeviation": 0.4777
+              }
+            },
+            {
+              "startSample": 1000,
+              "endSample": 2000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0407,
+                "highFrequencyRatio": 0.1126,
+                "derivativeOutlierRatio": 4.631,
+                "standardDeviation": 0.483
+              }
+            },
+            {
+              "startSample": 2000,
+              "endSample": 3000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0117,
+                "highFrequencyRatio": 0.1523,
+                "derivativeOutlierRatio": 4.284,
+                "standardDeviation": 0.4753
+              }
+            },
+            {
+              "startSample": 3000,
+              "endSample": 4000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0379,
+                "highFrequencyRatio": 0.1708,
+                "derivativeOutlierRatio": 5.6304,
+                "standardDeviation": 0.4622
+              }
+            },
+            {
+              "startSample": 4000,
+              "endSample": 5000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0375,
+                "highFrequencyRatio": 0.1054,
+                "derivativeOutlierRatio": 5.0643,
+                "standardDeviation": 0.5171
+              }
+            },
+            {
+              "startSample": 5000,
+              "endSample": 6000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0107,
+                "highFrequencyRatio": 0.1595,
+                "derivativeOutlierRatio": 4.7595,
+                "standardDeviation": 0.4906
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 40,
+            "medianBpm": 71.86,
+            "medianHeight": 2.0834,
+            "medianWidthSeconds": 0.22,
+            "pulses": [
+              {
+                "peakOffsetSamples": 24,
+                "height": 1.6482,
+                "widthSeconds": 0.165
+              },
+              {
+                "peakOffsetSamples": 194,
+                "height": 2.0796,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 364,
+                "height": 2.2386,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 534,
+                "height": 2.4479,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 704,
+                "height": 2.0873,
+                "widthSeconds": 0.18
+              },
+              {
+                "peakOffsetSamples": 871,
+                "height": 2.1242,
+                "widthSeconds": 0.165
+              },
+              {
+                "peakOffsetSamples": 951,
+                "height": 1.041,
+                "widthSeconds": 0.025
+              },
+              {
+                "peakOffsetSamples": 1045,
+                "height": 2.0609,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1214,
+                "height": 1.8558,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1391,
+                "height": 2.0322,
+                "widthSeconds": 0.21
+              },
+              {
+                "peakOffsetSamples": 1554,
+                "height": 2.4837,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 1730,
+                "height": 1.97,
+                "widthSeconds": 0.21
+              },
+              {
+                "peakOffsetSamples": 1897,
+                "height": 2.0132,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 2057,
+                "height": 2.3249,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 2218,
+                "height": 2.2073,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 2387,
+                "height": 1.961,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 2558,
+                "height": 2.0365,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2711,
+                "height": 2.1437,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 2880,
+                "height": 1.804,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 3047,
+                "height": 2.2326,
+                "widthSeconds": 0.21
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "height": 1.8739,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 3364,
+                "height": 1.9488,
+                "widthSeconds": 0.415
+              },
+              {
+                "peakOffsetSamples": 3537,
+                "height": 2.2694,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 3690,
+                "height": 2.1527,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 3868,
+                "height": 2.3782,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 4024,
+                "height": 2.4258,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "height": 2.4271,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 4277,
+                "height": 1.1935,
+                "widthSeconds": 0.02
+              },
+              {
+                "peakOffsetSamples": 4362,
+                "height": 1.8825,
+                "widthSeconds": 0.15
+              },
+              {
+                "peakOffsetSamples": 4534,
+                "height": 2.4894,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 4710,
+                "height": 2.1841,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 4888,
+                "height": 1.9533,
+                "widthSeconds": 0.215
+              },
+              {
+                "peakOffsetSamples": 5048,
+                "height": 1.9763,
+                "widthSeconds": 0.16
+              },
+              {
+                "peakOffsetSamples": 5220,
+                "height": 2.4244,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 5387,
+                "height": 2.2575,
+                "widthSeconds": 0.21
+              },
+              {
+                "peakOffsetSamples": 5554,
+                "height": 1.8244,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 5634,
+                "height": 1.1678,
+                "widthSeconds": 0.02
+              },
+              {
+                "peakOffsetSamples": 5723,
+                "height": 2.1017,
+                "widthSeconds": 0.19
+              },
+              {
+                "peakOffsetSamples": 5891,
+                "height": 2.3701,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 5994,
+                "height": 1.1944,
+                "widthSeconds": 0.215
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 36,
+            "medianBpm": 71.86,
+            "medianHeight": 1.5279,
+            "medianWidthSeconds": 0.2875,
+            "pulses": [
+              {
+                "peakOffsetSamples": 30,
+                "height": 1.35,
+                "widthSeconds": 0.45
+              },
+              {
+                "peakOffsetSamples": 195,
+                "height": 1.5733,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 361,
+                "height": 1.6401,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 533,
+                "height": 1.4843,
+                "widthSeconds": 0.31
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.5522,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 870,
+                "height": 1.514,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "height": 1.4836,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "height": 1.4493,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "height": 1.4459,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "height": 1.8963,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "height": 1.569,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "height": 1.4751,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "height": 1.6228,
+                "widthSeconds": 0.365
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "height": 1.5605,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "height": 1.5278,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "height": 1.5916,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2712,
+                "height": 1.5945,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "height": 1.3686,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "height": 1.5378,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "height": 1.2747,
+                "widthSeconds": 0.405
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "height": 1.3006,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "height": 1.5096,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 3693,
+                "height": 1.4469,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "height": 1.528,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "height": 1.4585,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "height": 1.7564,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "height": 1.4779,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "height": 1.9008,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "height": 1.5607,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "height": 1.6036,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "height": 1.5028,
+                "widthSeconds": 0.35
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "height": 1.7149,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "height": 1.5843,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "height": 1.4954,
+                "widthSeconds": 0.435
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "height": 1.419,
+                "widthSeconds": 0.395
+              },
+              {
+                "peakOffsetSamples": 5892,
+                "height": 1.7318,
+                "widthSeconds": 0.235
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 36,
+            "medianTimingShiftMilliseconds": 15
+          }
+        }
+      ],
+      "limitations": [
+        "The pipeline does not interpolate missing samples or convert rejected intervals into pulse measurements.",
+        "Quality thresholds are engineering defaults and must be calibrated against labelled reference data before clinical use."
+      ]
+    },
+    {
+      "recordingId": "S4",
+      "verdict": "review",
+      "samplingRateHz": 200,
+      "rawSampleCount": 6000,
+      "expectedSampleCount": 6000,
+      "issues": [],
+      "excludedIntervals": [],
+      "usableSegments": [
+        {
+          "startSample": 0,
+          "endSample": 6000,
+          "durationSeconds": 30,
+          "windows": [
+            {
+              "startSample": 0,
+              "endSample": 1000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0087,
+                "highFrequencyRatio": 0.0674,
+                "derivativeOutlierRatio": 2.0099,
+                "standardDeviation": 0.4653
+              }
+            },
+            {
+              "startSample": 1000,
+              "endSample": 2000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0407,
+                "highFrequencyRatio": 0.0549,
+                "derivativeOutlierRatio": 2.0861,
+                "standardDeviation": 0.4733
+              }
+            },
+            {
+              "startSample": 2000,
+              "endSample": 3000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0117,
+                "highFrequencyRatio": 0.0644,
+                "derivativeOutlierRatio": 1.9994,
+                "standardDeviation": 0.4667
+              }
+            },
+            {
+              "startSample": 3000,
+              "endSample": 4000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0379,
+                "highFrequencyRatio": 0.0751,
+                "derivativeOutlierRatio": 1.9142,
+                "standardDeviation": 0.4481
+              }
+            },
+            {
+              "startSample": 4000,
+              "endSample": 5000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0375,
+                "highFrequencyRatio": 0.0504,
+                "derivativeOutlierRatio": 2.0219,
+                "standardDeviation": 0.5077
+              }
+            },
+            {
+              "startSample": 5000,
+              "endSample": 6000,
+              "verdict": "review",
+              "reasons": [
+                "excess_high_frequency_energy"
+              ],
+              "metrics": {
+                "lowFrequencyRatio": 0.0107,
+                "highFrequencyRatio": 0.0677,
+                "derivativeOutlierRatio": 2.7668,
+                "standardDeviation": 0.4784
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 41,
+            "medianBpm": 75,
+            "medianHeight": 1.9585,
+            "medianWidthSeconds": 0.23,
+            "pulses": [
+              {
+                "peakOffsetSamples": 28,
+                "height": 1.6698,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 198,
+                "height": 2.0093,
+                "widthSeconds": 0.27
+              },
+              {
+                "peakOffsetSamples": 358,
+                "height": 2.1879,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 438,
+                "height": 1.0396,
+                "widthSeconds": 0.52
+              },
+              {
+                "peakOffsetSamples": 538,
+                "height": 1.9094,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 708,
+                "height": 1.9585,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 868,
+                "height": 2.0009,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 948,
+                "height": 1.0314,
+                "widthSeconds": 0.52
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "height": 1.9411,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 1218,
+                "height": 1.8659,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "height": 1.8525,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 1558,
+                "height": 2.3858,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 1728,
+                "height": 1.9016,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 1898,
+                "height": 1.8331,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "height": 2.0859,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 2218,
+                "height": 2.0066,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 2298,
+                "height": 1.1294,
+                "widthSeconds": 0.55
+              },
+              {
+                "peakOffsetSamples": 2388,
+                "height": 2.0521,
+                "widthSeconds": 0.19
+              },
+              {
+                "peakOffsetSamples": 2548,
+                "height": 1.9701,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 2708,
+                "height": 2.0282,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 2788,
+                "height": 1.0176,
+                "widthSeconds": 0.5
+              },
+              {
+                "peakOffsetSamples": 2878,
+                "height": 1.737,
+                "widthSeconds": 0.19
+              },
+              {
+                "peakOffsetSamples": 3048,
+                "height": 1.9652,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 3208,
+                "height": 1.6811,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "height": 1.7782,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 3528,
+                "height": 2.1179,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 3698,
+                "height": 1.8519,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 3868,
+                "height": 2.0066,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 4028,
+                "height": 2.0653,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 4198,
+                "height": 2.1749,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 4368,
+                "height": 1.9148,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 4528,
+                "height": 2.5321,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 4708,
+                "height": 1.9659,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "height": 2.0425,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 5048,
+                "height": 1.8992,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 5218,
+                "height": 2.1666,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "height": 2.0439,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 5558,
+                "height": 1.8132,
+                "widthSeconds": 0.2
+              },
+              {
+                "peakOffsetSamples": 5728,
+                "height": 1.8558,
+                "widthSeconds": 0.22
+              },
+              {
+                "peakOffsetSamples": 5888,
+                "height": 2.2398,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 5968,
+                "height": 1.1661,
+                "widthSeconds": 0.63
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 36,
+            "medianBpm": 71.86,
+            "medianHeight": 1.5277,
+            "medianWidthSeconds": 0.2875,
+            "pulses": [
+              {
+                "peakOffsetSamples": 30,
+                "height": 1.4037,
+                "widthSeconds": 0.46
+              },
+              {
+                "peakOffsetSamples": 195,
+                "height": 1.5729,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 361,
+                "height": 1.6396,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 533,
+                "height": 1.484,
+                "widthSeconds": 0.31
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.5519,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 870,
+                "height": 1.5137,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "height": 1.4834,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "height": 1.449,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "height": 1.4455,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "height": 1.8959,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "height": 1.5686,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "height": 1.4748,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "height": 1.6226,
+                "widthSeconds": 0.365
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "height": 1.5602,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "height": 1.5277,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "height": 1.5912,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 2712,
+                "height": 1.5941,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "height": 1.3684,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "height": 1.5375,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "height": 1.2745,
+                "widthSeconds": 0.405
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "height": 1.3005,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "height": 1.5095,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 3693,
+                "height": 1.4466,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "height": 1.5278,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "height": 1.4583,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "height": 1.7561,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "height": 1.4777,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "height": 1.9004,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "height": 1.5604,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "height": 1.6032,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "height": 1.5024,
+                "widthSeconds": 0.35
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "height": 1.7145,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "height": 1.584,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "height": 1.4951,
+                "widthSeconds": 0.435
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "height": 1.4187,
+                "widthSeconds": 0.395
+              },
+              {
+                "peakOffsetSamples": 5893,
+                "height": 1.7307,
+                "widthSeconds": 0.235
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 36,
+            "medianTimingShiftMilliseconds": 15
+          }
+        }
+      ],
+      "limitations": [
+        "The pipeline does not interpolate missing samples or convert rejected intervals into pulse measurements.",
+        "Quality thresholds are engineering defaults and must be calibrated against labelled reference data before clinical use."
+      ]
+    },
+    {
+      "recordingId": "S5",
+      "verdict": "rejected_as_full_recording",
+      "samplingRateHz": 200,
+      "rawSampleCount": 5800,
+      "expectedSampleCount": 6000,
+      "issues": [
+        {
+          "type": "sequence_discontinuity",
+          "packetPosition": 20,
+          "expected": 20,
+          "observed": 22
+        },
+        {
+          "type": "sample_index_discontinuity",
+          "packetPosition": 20,
+          "expected": 2000,
+          "observed": 2200
+        },
+        {
+          "type": "recording_sample_total_mismatch",
+          "expected": 6000,
+          "observed": 5800
+        }
+      ],
+      "excludedIntervals": [
+        {
+          "start": 2000,
+          "end": 2200,
+          "reasons": [
+            "missing_packet_samples"
+          ],
+          "startSeconds": 10,
+          "endSeconds": 11
+        },
+        {
+          "start": 3700,
+          "end": 3720,
+          "reasons": [
+            "flatline"
+          ],
+          "startSeconds": 18.5,
+          "endSeconds": 18.6
+        },
+        {
+          "start": 3851,
+          "end": 3895,
+          "reasons": [
+            "flatline"
+          ],
+          "startSeconds": 19.255,
+          "endSeconds": 19.475
+        },
+        {
+          "start": 5949,
+          "end": 5991,
+          "reasons": [
+            "flatline"
+          ],
+          "startSeconds": 29.745,
+          "endSeconds": 29.955
+        }
+      ],
+      "usableSegments": [
+        {
+          "startSample": 0,
+          "endSample": 2000,
+          "durationSeconds": 10,
+          "windows": [
+            {
+              "startSample": 0,
+              "endSample": 1000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0087,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.159,
+                "standardDeviation": 0.4456
+              }
+            },
+            {
+              "startSample": 1000,
+              "endSample": 2000,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0407,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 9.137,
+                "standardDeviation": 0.4541
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 12,
+            "medianBpm": 71.01,
+            "medianHeight": 1.5203,
+            "medianWidthSeconds": 0.2675,
+            "pulses": [
+              {
+                "peakOffsetSamples": 29,
+                "height": 1.3939,
+                "widthSeconds": 0.38
+              },
+              {
+                "peakOffsetSamples": 194,
+                "height": 1.5648,
+                "widthSeconds": 0.465
+              },
+              {
+                "peakOffsetSamples": 360,
+                "height": 1.7452,
+                "widthSeconds": 0.46
+              },
+              {
+                "peakOffsetSamples": 532,
+                "height": 1.4861,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.6383,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 869,
+                "height": 1.5536,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1047,
+                "height": 1.4722,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1211,
+                "height": 1.444,
+                "widthSeconds": 0.28
+              },
+              {
+                "peakOffsetSamples": 1387,
+                "height": 1.5075,
+                "widthSeconds": 0.27
+              },
+              {
+                "peakOffsetSamples": 1556,
+                "height": 1.9241,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1726,
+                "height": 1.5331,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1893,
+                "height": 1.3953,
+                "widthSeconds": 0.235
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 12,
+            "medianBpm": 71.01,
+            "medianHeight": 1.4991,
+            "medianWidthSeconds": 0.2875,
+            "pulses": [
+              {
+                "peakOffsetSamples": 30,
+                "height": 1.3694,
+                "widthSeconds": 0.455
+              },
+              {
+                "peakOffsetSamples": 195,
+                "height": 1.5732,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 361,
+                "height": 1.64,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 533,
+                "height": 1.4843,
+                "widthSeconds": 0.31
+              },
+              {
+                "peakOffsetSamples": 703,
+                "height": 1.5523,
+                "widthSeconds": 0.23
+              },
+              {
+                "peakOffsetSamples": 870,
+                "height": 1.514,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "height": 1.4836,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "height": 1.4493,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "height": 1.4459,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "height": 1.8962,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "height": 1.569,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "height": 1.4666,
+                "widthSeconds": 0.25
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 12,
+            "medianTimingShiftMilliseconds": 5
+          }
+        },
+        {
+          "startSample": 2200,
+          "endSample": 3700,
+          "durationSeconds": 7.5,
+          "windows": [
+            {
+              "startSample": 2200,
+              "endSample": 3200,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0235,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.0893,
+                "standardDeviation": 0.4454
+              }
+            },
+            {
+              "startSample": 3200,
+              "endSample": 3700,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0562,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 7.0255,
+                "standardDeviation": 0.424
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 10,
+            "medianBpm": 73.62,
+            "medianHeight": 1.4237,
+            "medianWidthSeconds": 0.29,
+            "pulses": [
+              {
+                "peakOffsetSamples": 21,
+                "height": 1.3528,
+                "widthSeconds": 0.21
+              },
+              {
+                "peakOffsetSamples": 189,
+                "height": 1.4237,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 352,
+                "height": 1.5816,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 510,
+                "height": 1.5835,
+                "widthSeconds": 0.24
+              },
+              {
+                "peakOffsetSamples": 678,
+                "height": 1.2809,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 843,
+                "height": 1.5602,
+                "widthSeconds": 0.34
+              },
+              {
+                "peakOffsetSamples": 1006,
+                "height": 1.2212,
+                "widthSeconds": 0.37
+              },
+              {
+                "peakOffsetSamples": 1167,
+                "height": 1.3146,
+                "widthSeconds": 0.42
+              },
+              {
+                "peakOffsetSamples": 1330,
+                "height": 1.6633,
+                "widthSeconds": 0.36
+              },
+              {
+                "peakOffsetSamples": 1492,
+                "height": 1.4237,
+                "widthSeconds": 0.11
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 10,
+            "medianBpm": 73.62,
+            "medianHeight": 1.48,
+            "medianWidthSeconds": 0.255,
+            "pulses": [
+              {
+                "peakOffsetSamples": 22,
+                "height": 1.2928,
+                "widthSeconds": 0.215
+              },
+              {
+                "peakOffsetSamples": 190,
+                "height": 1.5235,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 353,
+                "height": 1.5916,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 512,
+                "height": 1.5945,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 679,
+                "height": 1.3686,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 844,
+                "height": 1.5379,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 1007,
+                "height": 1.2747,
+                "widthSeconds": 0.405
+              },
+              {
+                "peakOffsetSamples": 1168,
+                "height": 1.3007,
+                "widthSeconds": 0.345
+              },
+              {
+                "peakOffsetSamples": 1331,
+                "height": 1.5099,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 1493,
+                "height": 1.4501,
+                "widthSeconds": 0.11
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 10,
+            "medianTimingShiftMilliseconds": 5
+          }
+        },
+        {
+          "startSample": 3895,
+          "endSample": 5949,
+          "durationSeconds": 10.27,
+          "windows": [
+            {
+              "startSample": 3895,
+              "endSample": 4895,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0253,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 9.168,
+                "standardDeviation": 0.495
+              }
+            },
+            {
+              "startSample": 4895,
+              "endSample": 5895,
+              "verdict": "accepted",
+              "reasons": [],
+              "metrics": {
+                "lowFrequencyRatio": 0.0079,
+                "highFrequencyRatio": 0.0001,
+                "derivativeOutlierRatio": 8.2523,
+                "standardDeviation": 0.4518
+              }
+            }
+          ],
+          "preprocessing": {
+            "method": "zero_phase_windowed_sinc_fir_bandpass",
+            "lowCutoffHz": 0.4,
+            "highCutoffHz": 12,
+            "taps": 401
+          },
+          "before": {
+            "pulseCount": 12,
+            "medianBpm": 71.01,
+            "medianHeight": 1.5489,
+            "medianWidthSeconds": 0.3475,
+            "pulses": [
+              {
+                "peakOffsetSamples": 130,
+                "height": 1.4268,
+                "widthSeconds": 0.245
+              },
+              {
+                "peakOffsetSamples": 298,
+                "height": 1.9782,
+                "widthSeconds": 0.28
+              },
+              {
+                "peakOffsetSamples": 471,
+                "height": 1.4599,
+                "widthSeconds": 0.45
+              },
+              {
+                "peakOffsetSamples": 635,
+                "height": 2.0861,
+                "widthSeconds": 0.38
+              },
+              {
+                "peakOffsetSamples": 809,
+                "height": 1.5231,
+                "widthSeconds": 0.43
+              },
+              {
+                "peakOffsetSamples": 982,
+                "height": 1.6907,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 1147,
+                "height": 1.4905,
+                "widthSeconds": 0.27
+              },
+              {
+                "peakOffsetSamples": 1319,
+                "height": 1.7254,
+                "widthSeconds": 0.26
+              },
+              {
+                "peakOffsetSamples": 1492,
+                "height": 1.5747,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 1661,
+                "height": 1.4924,
+                "widthSeconds": 0.405
+              },
+              {
+                "peakOffsetSamples": 1829,
+                "height": 1.4049,
+                "widthSeconds": 0.41
+              },
+              {
+                "peakOffsetSamples": 1996,
+                "height": 1.8255,
+                "widthSeconds": 0.315
+              }
+            ]
+          },
+          "after": {
+            "pulseCount": 12,
+            "medianBpm": 71.01,
+            "medianHeight": 1.5725,
+            "medianWidthSeconds": 0.26,
+            "pulses": [
+              {
+                "peakOffsetSamples": 130,
+                "height": 1.3955,
+                "widthSeconds": 0.225
+              },
+              {
+                "peakOffsetSamples": 299,
+                "height": 1.7359,
+                "widthSeconds": 0.235
+              },
+              {
+                "peakOffsetSamples": 472,
+                "height": 1.4779,
+                "widthSeconds": 0.4
+              },
+              {
+                "peakOffsetSamples": 636,
+                "height": 1.9007,
+                "widthSeconds": 0.255
+              },
+              {
+                "peakOffsetSamples": 810,
+                "height": 1.5607,
+                "widthSeconds": 0.44
+              },
+              {
+                "peakOffsetSamples": 983,
+                "height": 1.6036,
+                "widthSeconds": 0.265
+              },
+              {
+                "peakOffsetSamples": 1148,
+                "height": 1.5028,
+                "widthSeconds": 0.35
+              },
+              {
+                "peakOffsetSamples": 1320,
+                "height": 1.7148,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1493,
+                "height": 1.5843,
+                "widthSeconds": 0.25
+              },
+              {
+                "peakOffsetSamples": 1662,
+                "height": 1.4954,
+                "widthSeconds": 0.435
+              },
+              {
+                "peakOffsetSamples": 1830,
+                "height": 1.419,
+                "widthSeconds": 0.39
+              },
+              {
+                "peakOffsetSamples": 1997,
+                "height": 1.7064,
+                "widthSeconds": 0.23
+              }
+            ]
+          },
+          "comparison": {
+            "matchedPeaks": 12,
+            "medianTimingShiftMilliseconds": 5
+          }
+        }
+      ],
+      "limitations": [
+        "The pipeline does not interpolate missing samples or convert rejected intervals into pulse measurements.",
+        "Quality thresholds are engineering defaults and must be calibrated against labelled reference data before clinical use."
+      ]
+    }
+  ]
+}
