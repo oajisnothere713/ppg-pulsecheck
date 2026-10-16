@@ -14,7 +14,11 @@
       "maximumLowFrequencyRatio": 0.35,
       "maximumDerivativeOutlierRatio": 20,
       "peakMinimumDistanceSeconds": 0.4,
-      "peakProminenceFraction": 0.15
+      "peakProminenceFraction": 0.15,
+      "beatAtlasLengthSamples": 120,
+      "beatAtlasWarpFraction": 0.2,
+      "beatAtlasMinimumDtwThreshold": 0.06,
+      "beatAtlasMadMultiplier": 4
     },
     "safetyNote": "This output is an engineering quality assessment, not a diagnosis or clinical decision."
   },
@@ -507,6 +511,576 @@
           "comparison": {
             "matchedPeaks": 36,
             "medianTimingShiftMilliseconds": 5
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 34,
+            "candidateBeatCount": 34,
+            "medianDtwDistance": 0.01189,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 34,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 194,
+                "startOffsetSamples": 112,
+                "endOffsetSamples": 277,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.02917,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 360,
+                "startOffsetSamples": 277,
+                "endOffsetSamples": 446,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.011,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 532,
+                "startOffsetSamples": 446,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00723,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 786,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01079,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 869,
+                "startOffsetSamples": 786,
+                "endOffsetSamples": 958,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.0099,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1047,
+                "startOffsetSamples": 958,
+                "endOffsetSamples": 1129,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00878,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1211,
+                "startOffsetSamples": 1129,
+                "endOffsetSamples": 1299,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.01145,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1387,
+                "startOffsetSamples": 1299,
+                "endOffsetSamples": 1472,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.01015,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1556,
+                "startOffsetSamples": 1472,
+                "endOffsetSamples": 1641,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01382,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1726,
+                "startOffsetSamples": 1641,
+                "endOffsetSamples": 1810,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01264,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1893,
+                "startOffsetSamples": 1810,
+                "endOffsetSamples": 1975,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01184,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2057,
+                "startOffsetSamples": 1975,
+                "endOffsetSamples": 2139,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.0068,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2221,
+                "startOffsetSamples": 2139,
+                "endOffsetSamples": 2305,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01233,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2389,
+                "startOffsetSamples": 2305,
+                "endOffsetSamples": 2471,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01081,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2552,
+                "startOffsetSamples": 2471,
+                "endOffsetSamples": 2631,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.01193,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2710,
+                "startOffsetSamples": 2631,
+                "endOffsetSamples": 2794,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.00654,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2878,
+                "startOffsetSamples": 2794,
+                "endOffsetSamples": 2961,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.01572,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3043,
+                "startOffsetSamples": 2961,
+                "endOffsetSamples": 3125,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.01121,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3206,
+                "startOffsetSamples": 3125,
+                "endOffsetSamples": 3287,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.01413,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3367,
+                "startOffsetSamples": 3287,
+                "endOffsetSamples": 3449,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.01471,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3530,
+                "startOffsetSamples": 3449,
+                "endOffsetSamples": 3611,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.03374,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3692,
+                "startOffsetSamples": 3611,
+                "endOffsetSamples": 3779,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01487,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3865,
+                "startOffsetSamples": 3779,
+                "endOffsetSamples": 3945,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.0108,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4025,
+                "startOffsetSamples": 3945,
+                "endOffsetSamples": 4109,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.01701,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4193,
+                "startOffsetSamples": 4109,
+                "endOffsetSamples": 4280,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.02897,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4366,
+                "startOffsetSamples": 4280,
+                "endOffsetSamples": 4448,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.03501,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4530,
+                "startOffsetSamples": 4448,
+                "endOffsetSamples": 4617,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.03654,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4704,
+                "startOffsetSamples": 4617,
+                "endOffsetSamples": 4791,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.0269,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4877,
+                "startOffsetSamples": 4791,
+                "endOffsetSamples": 4960,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00902,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5042,
+                "startOffsetSamples": 4960,
+                "endOffsetSamples": 5128,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00984,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5214,
+                "startOffsetSamples": 5128,
+                "endOffsetSamples": 5301,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00814,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5387,
+                "startOffsetSamples": 5301,
+                "endOffsetSamples": 5472,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01107,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5556,
+                "startOffsetSamples": 5472,
+                "endOffsetSamples": 5640,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01207,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5724,
+                "startOffsetSamples": 5640,
+                "endOffsetSamples": 5808,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01396,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 34,
+            "candidateBeatCount": 34,
+            "medianDtwDistance": 0.00933,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 34,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 195,
+                "startOffsetSamples": 113,
+                "endOffsetSamples": 278,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01663,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 361,
+                "startOffsetSamples": 278,
+                "endOffsetSamples": 447,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0112,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 533,
+                "startOffsetSamples": 447,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00481,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 787,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0087,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 870,
+                "startOffsetSamples": 787,
+                "endOffsetSamples": 959,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00936,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "startOffsetSamples": 959,
+                "endOffsetSamples": 1131,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00714,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "startOffsetSamples": 1131,
+                "endOffsetSamples": 1301,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.00907,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "startOffsetSamples": 1301,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.0117,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1642,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00974,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "startOffsetSamples": 1642,
+                "endOffsetSamples": 1811,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00738,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "startOffsetSamples": 1811,
+                "endOffsetSamples": 1976,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01004,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "startOffsetSamples": 1976,
+                "endOffsetSamples": 2140,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00707,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "startOffsetSamples": 2140,
+                "endOffsetSamples": 2306,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01099,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "startOffsetSamples": 2306,
+                "endOffsetSamples": 2472,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01058,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "startOffsetSamples": 2472,
+                "endOffsetSamples": 2633,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.01127,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2712,
+                "startOffsetSamples": 2633,
+                "endOffsetSamples": 2796,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.00849,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "startOffsetSamples": 2796,
+                "endOffsetSamples": 2962,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01019,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "startOffsetSamples": 2962,
+                "endOffsetSamples": 3126,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00856,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "startOffsetSamples": 3126,
+                "endOffsetSamples": 3288,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00767,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "startOffsetSamples": 3288,
+                "endOffsetSamples": 3450,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00621,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "startOffsetSamples": 3450,
+                "endOffsetSamples": 3612,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.0226,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3693,
+                "startOffsetSamples": 3612,
+                "endOffsetSamples": 3780,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01172,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "startOffsetSamples": 3780,
+                "endOffsetSamples": 3946,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00613,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "startOffsetSamples": 3946,
+                "endOffsetSamples": 4110,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00855,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "startOffsetSamples": 4110,
+                "endOffsetSamples": 4281,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01571,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "startOffsetSamples": 4281,
+                "endOffsetSamples": 4449,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01549,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "startOffsetSamples": 4449,
+                "endOffsetSamples": 4618,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01904,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "startOffsetSamples": 4618,
+                "endOffsetSamples": 4792,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.01261,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "startOffsetSamples": 4792,
+                "endOffsetSamples": 4961,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00792,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "startOffsetSamples": 4961,
+                "endOffsetSamples": 5129,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00961,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "startOffsetSamples": 5129,
+                "endOffsetSamples": 5302,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00748,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "startOffsetSamples": 5302,
+                "endOffsetSamples": 5473,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00926,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "startOffsetSamples": 5473,
+                "endOffsetSamples": 5641,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00929,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "startOffsetSamples": 5641,
+                "endOffsetSamples": 5809,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00841,
+                "verdict": "accepted"
+              }
+            ]
           }
         }
       ],
@@ -987,6 +1561,576 @@
           "comparison": {
             "matchedPeaks": 36,
             "medianTimingShiftMilliseconds": 5
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 34,
+            "candidateBeatCount": 34,
+            "medianDtwDistance": 0.02047,
+            "dtwThreshold": 0.06489,
+            "acceptedBeatCount": 33,
+            "reviewBeatCount": 1,
+            "beats": [
+              {
+                "peakOffsetSamples": 193,
+                "startOffsetSamples": 112,
+                "endOffsetSamples": 277,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.02388,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 361,
+                "startOffsetSamples": 277,
+                "endOffsetSamples": 447,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.01098,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 532,
+                "startOffsetSamples": 447,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.03682,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 786,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01124,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 868,
+                "startOffsetSamples": 786,
+                "endOffsetSamples": 958,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.03769,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1047,
+                "startOffsetSamples": 958,
+                "endOffsetSamples": 1129,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.02457,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1211,
+                "startOffsetSamples": 1129,
+                "endOffsetSamples": 1299,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.00887,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1387,
+                "startOffsetSamples": 1299,
+                "endOffsetSamples": 1472,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.01847,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1556,
+                "startOffsetSamples": 1472,
+                "endOffsetSamples": 1641,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.02409,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1726,
+                "startOffsetSamples": 1641,
+                "endOffsetSamples": 1810,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01998,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1893,
+                "startOffsetSamples": 1810,
+                "endOffsetSamples": 1975,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.04416,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2057,
+                "startOffsetSamples": 1975,
+                "endOffsetSamples": 2139,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.01232,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2221,
+                "startOffsetSamples": 2139,
+                "endOffsetSamples": 2305,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01115,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2389,
+                "startOffsetSamples": 2305,
+                "endOffsetSamples": 2471,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01125,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2552,
+                "startOffsetSamples": 2471,
+                "endOffsetSamples": 2631,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.01947,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2710,
+                "startOffsetSamples": 2631,
+                "endOffsetSamples": 2794,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.02118,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2878,
+                "startOffsetSamples": 2794,
+                "endOffsetSamples": 2961,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.01187,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3043,
+                "startOffsetSamples": 2961,
+                "endOffsetSamples": 3125,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.05073,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3206,
+                "startOffsetSamples": 3125,
+                "endOffsetSamples": 3286,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.0207,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3366,
+                "startOffsetSamples": 3286,
+                "endOffsetSamples": 3448,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.01045,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3530,
+                "startOffsetSamples": 3448,
+                "endOffsetSamples": 3611,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.01836,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3692,
+                "startOffsetSamples": 3611,
+                "endOffsetSamples": 3779,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00975,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3865,
+                "startOffsetSamples": 3779,
+                "endOffsetSamples": 3945,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01658,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4025,
+                "startOffsetSamples": 3945,
+                "endOffsetSamples": 4109,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.02318,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4193,
+                "startOffsetSamples": 4109,
+                "endOffsetSamples": 4280,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.05727,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4366,
+                "startOffsetSamples": 4280,
+                "endOffsetSamples": 4448,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.02673,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4529,
+                "startOffsetSamples": 4448,
+                "endOffsetSamples": 4617,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.07681,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 4704,
+                "startOffsetSamples": 4617,
+                "endOffsetSamples": 4791,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.03411,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4877,
+                "startOffsetSamples": 4791,
+                "endOffsetSamples": 4960,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01364,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5042,
+                "startOffsetSamples": 4960,
+                "endOffsetSamples": 5128,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.02417,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5214,
+                "startOffsetSamples": 5128,
+                "endOffsetSamples": 5301,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.01797,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5387,
+                "startOffsetSamples": 5301,
+                "endOffsetSamples": 5471,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.02024,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5555,
+                "startOffsetSamples": 5471,
+                "endOffsetSamples": 5640,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.054,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5724,
+                "startOffsetSamples": 5640,
+                "endOffsetSamples": 5808,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.02547,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 34,
+            "candidateBeatCount": 34,
+            "medianDtwDistance": 0.01126,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 34,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 195,
+                "startOffsetSamples": 113,
+                "endOffsetSamples": 279,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01491,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 362,
+                "startOffsetSamples": 279,
+                "endOffsetSamples": 448,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0076,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 533,
+                "startOffsetSamples": 448,
+                "endOffsetSamples": 619,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.0136,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 704,
+                "startOffsetSamples": 619,
+                "endOffsetSamples": 787,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01038,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 870,
+                "startOffsetSamples": 787,
+                "endOffsetSamples": 959,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.01146,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "startOffsetSamples": 959,
+                "endOffsetSamples": 1131,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.01104,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "startOffsetSamples": 1131,
+                "endOffsetSamples": 1301,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.00869,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "startOffsetSamples": 1301,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00579,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1642,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01122,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "startOffsetSamples": 1642,
+                "endOffsetSamples": 1811,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0101,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "startOffsetSamples": 1811,
+                "endOffsetSamples": 1976,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01507,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "startOffsetSamples": 1976,
+                "endOffsetSamples": 2140,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00814,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "startOffsetSamples": 2140,
+                "endOffsetSamples": 2306,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00913,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "startOffsetSamples": 2306,
+                "endOffsetSamples": 2472,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01286,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "startOffsetSamples": 2472,
+                "endOffsetSamples": 2632,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.01039,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2711,
+                "startOffsetSamples": 2632,
+                "endOffsetSamples": 2795,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.00718,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "startOffsetSamples": 2795,
+                "endOffsetSamples": 2962,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.01057,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "startOffsetSamples": 2962,
+                "endOffsetSamples": 3126,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.01457,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "startOffsetSamples": 3126,
+                "endOffsetSamples": 3287,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.01799,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3367,
+                "startOffsetSamples": 3287,
+                "endOffsetSamples": 3449,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.01079,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "startOffsetSamples": 3449,
+                "endOffsetSamples": 3613,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.01516,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3694,
+                "startOffsetSamples": 3613,
+                "endOffsetSamples": 3780,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.00653,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "startOffsetSamples": 3780,
+                "endOffsetSamples": 3946,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00871,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "startOffsetSamples": 3946,
+                "endOffsetSamples": 4110,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00819,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "startOffsetSamples": 4110,
+                "endOffsetSamples": 4281,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01762,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "startOffsetSamples": 4281,
+                "endOffsetSamples": 4449,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01803,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "startOffsetSamples": 4449,
+                "endOffsetSamples": 4618,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.02457,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "startOffsetSamples": 4618,
+                "endOffsetSamples": 4792,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.0228,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "startOffsetSamples": 4792,
+                "endOffsetSamples": 4961,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01227,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "startOffsetSamples": 4961,
+                "endOffsetSamples": 5129,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01129,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "startOffsetSamples": 5129,
+                "endOffsetSamples": 5302,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.01042,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "startOffsetSamples": 5302,
+                "endOffsetSamples": 5473,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01751,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "startOffsetSamples": 5473,
+                "endOffsetSamples": 5641,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01242,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "startOffsetSamples": 5641,
+                "endOffsetSamples": 5809,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.014,
+                "verdict": "accepted"
+              }
+            ]
           }
         }
       ],
@@ -1499,6 +2643,608 @@
           "comparison": {
             "matchedPeaks": 36,
             "medianTimingShiftMilliseconds": 15
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 35,
+            "candidateBeatCount": 38,
+            "medianDtwDistance": 0.06047,
+            "dtwThreshold": 0.09628,
+            "acceptedBeatCount": 35,
+            "reviewBeatCount": 3,
+            "beats": [
+              {
+                "peakOffsetSamples": 194,
+                "startOffsetSamples": 109,
+                "endOffsetSamples": 279,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.06038,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 364,
+                "startOffsetSamples": 279,
+                "endOffsetSamples": 449,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.06797,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 534,
+                "startOffsetSamples": 449,
+                "endOffsetSamples": 619,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.05861,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 704,
+                "startOffsetSamples": 619,
+                "endOffsetSamples": 788,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.05958,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 871,
+                "startOffsetSamples": 788,
+                "endOffsetSamples": 911,
+                "durationSeconds": 0.615,
+                "dtwDistance": 0.04686,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 951,
+                "startOffsetSamples": 911,
+                "endOffsetSamples": 998,
+                "durationSeconds": 0.435,
+                "dtwDistance": 0.1956,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 1045,
+                "startOffsetSamples": 998,
+                "endOffsetSamples": 1130,
+                "durationSeconds": 0.66,
+                "dtwDistance": 0.05623,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1214,
+                "startOffsetSamples": 1130,
+                "endOffsetSamples": 1303,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.07476,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1391,
+                "startOffsetSamples": 1303,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.05565,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1554,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1642,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.05113,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1730,
+                "startOffsetSamples": 1642,
+                "endOffsetSamples": 1814,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.06227,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1897,
+                "startOffsetSamples": 1814,
+                "endOffsetSamples": 1977,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.05336,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2057,
+                "startOffsetSamples": 1977,
+                "endOffsetSamples": 2138,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.04717,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2218,
+                "startOffsetSamples": 2138,
+                "endOffsetSamples": 2303,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.05214,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2387,
+                "startOffsetSamples": 2303,
+                "endOffsetSamples": 2473,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.06323,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2558,
+                "startOffsetSamples": 2473,
+                "endOffsetSamples": 2635,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.0699,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2711,
+                "startOffsetSamples": 2635,
+                "endOffsetSamples": 2796,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.04904,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2880,
+                "startOffsetSamples": 2796,
+                "endOffsetSamples": 2964,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.06057,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3047,
+                "startOffsetSamples": 2964,
+                "endOffsetSamples": 3127,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.06325,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "startOffsetSamples": 3127,
+                "endOffsetSamples": 3286,
+                "durationSeconds": 0.795,
+                "dtwDistance": 0.06492,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3364,
+                "startOffsetSamples": 3286,
+                "endOffsetSamples": 3451,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.07589,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3537,
+                "startOffsetSamples": 3451,
+                "endOffsetSamples": 3614,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.06934,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3690,
+                "startOffsetSamples": 3614,
+                "endOffsetSamples": 3779,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.05303,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3868,
+                "startOffsetSamples": 3779,
+                "endOffsetSamples": 3946,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.06032,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4024,
+                "startOffsetSamples": 3946,
+                "endOffsetSamples": 4109,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.05551,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "startOffsetSamples": 4109,
+                "endOffsetSamples": 4236,
+                "durationSeconds": 0.635,
+                "dtwDistance": 0.04942,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4277,
+                "startOffsetSamples": 4236,
+                "endOffsetSamples": 4320,
+                "durationSeconds": 0.42,
+                "dtwDistance": 0.28607,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 4362,
+                "startOffsetSamples": 4320,
+                "endOffsetSamples": 4448,
+                "durationSeconds": 0.64,
+                "dtwDistance": 0.06491,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4534,
+                "startOffsetSamples": 4448,
+                "endOffsetSamples": 4622,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.06363,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4710,
+                "startOffsetSamples": 4622,
+                "endOffsetSamples": 4799,
+                "durationSeconds": 0.885,
+                "dtwDistance": 0.06187,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4888,
+                "startOffsetSamples": 4799,
+                "endOffsetSamples": 4968,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.05781,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5048,
+                "startOffsetSamples": 4968,
+                "endOffsetSamples": 5134,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.06111,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5220,
+                "startOffsetSamples": 5134,
+                "endOffsetSamples": 5304,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.0514,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5387,
+                "startOffsetSamples": 5304,
+                "endOffsetSamples": 5471,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.06151,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5554,
+                "startOffsetSamples": 5471,
+                "endOffsetSamples": 5594,
+                "durationSeconds": 0.615,
+                "dtwDistance": 0.05855,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5634,
+                "startOffsetSamples": 5594,
+                "endOffsetSamples": 5679,
+                "durationSeconds": 0.425,
+                "dtwDistance": 0.28832,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 5723,
+                "startOffsetSamples": 5679,
+                "endOffsetSamples": 5807,
+                "durationSeconds": 0.64,
+                "dtwDistance": 0.07271,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5891,
+                "startOffsetSamples": 5807,
+                "endOffsetSamples": 5943,
+                "durationSeconds": 0.68,
+                "dtwDistance": 0.04731,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 34,
+            "candidateBeatCount": 34,
+            "medianDtwDistance": 0.00933,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 34,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 195,
+                "startOffsetSamples": 113,
+                "endOffsetSamples": 278,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01664,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 361,
+                "startOffsetSamples": 278,
+                "endOffsetSamples": 447,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0112,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 533,
+                "startOffsetSamples": 447,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00481,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 787,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0087,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 870,
+                "startOffsetSamples": 787,
+                "endOffsetSamples": 959,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00936,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "startOffsetSamples": 959,
+                "endOffsetSamples": 1131,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00714,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "startOffsetSamples": 1131,
+                "endOffsetSamples": 1301,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.00907,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "startOffsetSamples": 1301,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.0117,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1642,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00974,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "startOffsetSamples": 1642,
+                "endOffsetSamples": 1811,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00738,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "startOffsetSamples": 1811,
+                "endOffsetSamples": 1976,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01004,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "startOffsetSamples": 1976,
+                "endOffsetSamples": 2140,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00707,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "startOffsetSamples": 2140,
+                "endOffsetSamples": 2306,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01099,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "startOffsetSamples": 2306,
+                "endOffsetSamples": 2472,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01058,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "startOffsetSamples": 2472,
+                "endOffsetSamples": 2633,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.01127,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2712,
+                "startOffsetSamples": 2633,
+                "endOffsetSamples": 2796,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.00849,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "startOffsetSamples": 2796,
+                "endOffsetSamples": 2962,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01019,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "startOffsetSamples": 2962,
+                "endOffsetSamples": 3126,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00856,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "startOffsetSamples": 3126,
+                "endOffsetSamples": 3288,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00767,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "startOffsetSamples": 3288,
+                "endOffsetSamples": 3450,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00621,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "startOffsetSamples": 3450,
+                "endOffsetSamples": 3612,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.0226,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3693,
+                "startOffsetSamples": 3612,
+                "endOffsetSamples": 3780,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01172,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "startOffsetSamples": 3780,
+                "endOffsetSamples": 3946,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00612,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "startOffsetSamples": 3946,
+                "endOffsetSamples": 4110,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00855,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "startOffsetSamples": 4110,
+                "endOffsetSamples": 4281,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01571,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "startOffsetSamples": 4281,
+                "endOffsetSamples": 4449,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01549,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "startOffsetSamples": 4449,
+                "endOffsetSamples": 4618,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01905,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "startOffsetSamples": 4618,
+                "endOffsetSamples": 4792,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.0126,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "startOffsetSamples": 4792,
+                "endOffsetSamples": 4961,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00792,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "startOffsetSamples": 4961,
+                "endOffsetSamples": 5129,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00961,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "startOffsetSamples": 5129,
+                "endOffsetSamples": 5302,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00748,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "startOffsetSamples": 5302,
+                "endOffsetSamples": 5473,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00927,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "startOffsetSamples": 5473,
+                "endOffsetSamples": 5641,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.0093,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "startOffsetSamples": 5641,
+                "endOffsetSamples": 5809,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00846,
+                "verdict": "accepted"
+              }
+            ]
           }
         }
       ],
@@ -2016,6 +3762,616 @@
           "comparison": {
             "matchedPeaks": 36,
             "medianTimingShiftMilliseconds": 15
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 35,
+            "candidateBeatCount": 39,
+            "medianDtwDistance": 0.04257,
+            "dtwThreshold": 0.07848,
+            "acceptedBeatCount": 35,
+            "reviewBeatCount": 4,
+            "beats": [
+              {
+                "peakOffsetSamples": 198,
+                "startOffsetSamples": 113,
+                "endOffsetSamples": 278,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.04398,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 358,
+                "startOffsetSamples": 278,
+                "endOffsetSamples": 398,
+                "durationSeconds": 0.6,
+                "dtwDistance": 0.05808,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 438,
+                "startOffsetSamples": 398,
+                "endOffsetSamples": 488,
+                "durationSeconds": 0.45,
+                "dtwDistance": 0.27897,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 538,
+                "startOffsetSamples": 488,
+                "endOffsetSamples": 623,
+                "durationSeconds": 0.675,
+                "dtwDistance": 0.03728,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 708,
+                "startOffsetSamples": 623,
+                "endOffsetSamples": 788,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.03652,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 868,
+                "startOffsetSamples": 788,
+                "endOffsetSamples": 908,
+                "durationSeconds": 0.6,
+                "dtwDistance": 0.05141,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 948,
+                "startOffsetSamples": 908,
+                "endOffsetSamples": 998,
+                "durationSeconds": 0.45,
+                "dtwDistance": 0.28903,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "startOffsetSamples": 998,
+                "endOffsetSamples": 1133,
+                "durationSeconds": 0.675,
+                "dtwDistance": 0.03737,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1218,
+                "startOffsetSamples": 1133,
+                "endOffsetSamples": 1303,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03885,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "startOffsetSamples": 1303,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03936,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1558,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1643,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03158,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1728,
+                "startOffsetSamples": 1643,
+                "endOffsetSamples": 1813,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03883,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1898,
+                "startOffsetSamples": 1813,
+                "endOffsetSamples": 1978,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.03988,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "startOffsetSamples": 1978,
+                "endOffsetSamples": 2138,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.03557,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2218,
+                "startOffsetSamples": 2138,
+                "endOffsetSamples": 2258,
+                "durationSeconds": 0.6,
+                "dtwDistance": 0.06066,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2298,
+                "startOffsetSamples": 2258,
+                "endOffsetSamples": 2343,
+                "durationSeconds": 0.425,
+                "dtwDistance": 0.24018,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 2388,
+                "startOffsetSamples": 2343,
+                "endOffsetSamples": 2468,
+                "durationSeconds": 0.625,
+                "dtwDistance": 0.05186,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2548,
+                "startOffsetSamples": 2468,
+                "endOffsetSamples": 2628,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.04112,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2708,
+                "startOffsetSamples": 2628,
+                "endOffsetSamples": 2748,
+                "durationSeconds": 0.6,
+                "dtwDistance": 0.05541,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2788,
+                "startOffsetSamples": 2748,
+                "endOffsetSamples": 2833,
+                "durationSeconds": 0.425,
+                "dtwDistance": 0.27438,
+                "verdict": "review"
+              },
+              {
+                "peakOffsetSamples": 2878,
+                "startOffsetSamples": 2833,
+                "endOffsetSamples": 2963,
+                "durationSeconds": 0.65,
+                "dtwDistance": 0.05012,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3048,
+                "startOffsetSamples": 2963,
+                "endOffsetSamples": 3128,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.03619,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3208,
+                "startOffsetSamples": 3128,
+                "endOffsetSamples": 3288,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.04773,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "startOffsetSamples": 3288,
+                "endOffsetSamples": 3448,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.04261,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3528,
+                "startOffsetSamples": 3448,
+                "endOffsetSamples": 3613,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.05165,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3698,
+                "startOffsetSamples": 3613,
+                "endOffsetSamples": 3783,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.04257,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3868,
+                "startOffsetSamples": 3783,
+                "endOffsetSamples": 3948,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.03718,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4028,
+                "startOffsetSamples": 3948,
+                "endOffsetSamples": 4113,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.03827,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4198,
+                "startOffsetSamples": 4113,
+                "endOffsetSamples": 4283,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.04289,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4368,
+                "startOffsetSamples": 4283,
+                "endOffsetSamples": 4448,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.04516,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4528,
+                "startOffsetSamples": 4448,
+                "endOffsetSamples": 4618,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.04758,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4708,
+                "startOffsetSamples": 4618,
+                "endOffsetSamples": 4793,
+                "durationSeconds": 0.875,
+                "dtwDistance": 0.05407,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "startOffsetSamples": 4793,
+                "endOffsetSamples": 4963,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03271,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5048,
+                "startOffsetSamples": 4963,
+                "endOffsetSamples": 5133,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03786,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5218,
+                "startOffsetSamples": 5133,
+                "endOffsetSamples": 5303,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03145,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "startOffsetSamples": 5303,
+                "endOffsetSamples": 5473,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03267,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5558,
+                "startOffsetSamples": 5473,
+                "endOffsetSamples": 5643,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.03818,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5728,
+                "startOffsetSamples": 5643,
+                "endOffsetSamples": 5808,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.04146,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5888,
+                "startOffsetSamples": 5808,
+                "endOffsetSamples": 5928,
+                "durationSeconds": 0.6,
+                "dtwDistance": 0.06429,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 34,
+            "candidateBeatCount": 34,
+            "medianDtwDistance": 0.00933,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 34,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 195,
+                "startOffsetSamples": 113,
+                "endOffsetSamples": 278,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01663,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 361,
+                "startOffsetSamples": 278,
+                "endOffsetSamples": 447,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0112,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 533,
+                "startOffsetSamples": 447,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00481,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 787,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.0087,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 870,
+                "startOffsetSamples": 787,
+                "endOffsetSamples": 959,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00936,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "startOffsetSamples": 959,
+                "endOffsetSamples": 1131,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00714,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "startOffsetSamples": 1131,
+                "endOffsetSamples": 1301,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.00907,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "startOffsetSamples": 1301,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.01175,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1642,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00975,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "startOffsetSamples": 1642,
+                "endOffsetSamples": 1811,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00737,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1894,
+                "startOffsetSamples": 1811,
+                "endOffsetSamples": 1976,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01004,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2058,
+                "startOffsetSamples": 1976,
+                "endOffsetSamples": 2140,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00707,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2222,
+                "startOffsetSamples": 2140,
+                "endOffsetSamples": 2306,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01098,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2390,
+                "startOffsetSamples": 2306,
+                "endOffsetSamples": 2472,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01057,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2553,
+                "startOffsetSamples": 2472,
+                "endOffsetSamples": 2633,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.01128,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2712,
+                "startOffsetSamples": 2633,
+                "endOffsetSamples": 2796,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.0085,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 2879,
+                "startOffsetSamples": 2796,
+                "endOffsetSamples": 2962,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01018,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3044,
+                "startOffsetSamples": 2962,
+                "endOffsetSamples": 3126,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00855,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3207,
+                "startOffsetSamples": 3126,
+                "endOffsetSamples": 3288,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00767,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3368,
+                "startOffsetSamples": 3288,
+                "endOffsetSamples": 3450,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.0062,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3531,
+                "startOffsetSamples": 3450,
+                "endOffsetSamples": 3612,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.02259,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3693,
+                "startOffsetSamples": 3612,
+                "endOffsetSamples": 3780,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01172,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 3866,
+                "startOffsetSamples": 3780,
+                "endOffsetSamples": 3946,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00612,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4026,
+                "startOffsetSamples": 3946,
+                "endOffsetSamples": 4110,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00854,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4194,
+                "startOffsetSamples": 4110,
+                "endOffsetSamples": 4281,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01571,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4367,
+                "startOffsetSamples": 4281,
+                "endOffsetSamples": 4449,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01549,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4531,
+                "startOffsetSamples": 4449,
+                "endOffsetSamples": 4618,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01905,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4705,
+                "startOffsetSamples": 4618,
+                "endOffsetSamples": 4792,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.01261,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 4878,
+                "startOffsetSamples": 4792,
+                "endOffsetSamples": 4961,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00792,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5043,
+                "startOffsetSamples": 4961,
+                "endOffsetSamples": 5129,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00961,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5215,
+                "startOffsetSamples": 5129,
+                "endOffsetSamples": 5302,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00748,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5388,
+                "startOffsetSamples": 5302,
+                "endOffsetSamples": 5473,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00926,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5557,
+                "startOffsetSamples": 5473,
+                "endOffsetSamples": 5641,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00929,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 5725,
+                "startOffsetSamples": 5641,
+                "endOffsetSamples": 5809,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00843,
+                "verdict": "accepted"
+              }
+            ]
           }
         }
       ],
@@ -2263,6 +4619,192 @@
           "comparison": {
             "matchedPeaks": 12,
             "medianTimingShiftMilliseconds": 5
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 10,
+            "candidateBeatCount": 10,
+            "medianDtwDistance": 0.01045,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 10,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 194,
+                "startOffsetSamples": 112,
+                "endOffsetSamples": 277,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.03025,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 360,
+                "startOffsetSamples": 277,
+                "endOffsetSamples": 446,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00672,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 532,
+                "startOffsetSamples": 446,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.01022,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 786,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01069,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 869,
+                "startOffsetSamples": 786,
+                "endOffsetSamples": 958,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.0097,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1047,
+                "startOffsetSamples": 958,
+                "endOffsetSamples": 1129,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00812,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1211,
+                "startOffsetSamples": 1129,
+                "endOffsetSamples": 1299,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.01143,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1387,
+                "startOffsetSamples": 1299,
+                "endOffsetSamples": 1472,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00824,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1556,
+                "startOffsetSamples": 1472,
+                "endOffsetSamples": 1641,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01434,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1726,
+                "startOffsetSamples": 1641,
+                "endOffsetSamples": 1810,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01201,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 10,
+            "candidateBeatCount": 10,
+            "medianDtwDistance": 0.00885,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 10,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 195,
+                "startOffsetSamples": 113,
+                "endOffsetSamples": 278,
+                "durationSeconds": 0.825,
+                "dtwDistance": 0.01884,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 361,
+                "startOffsetSamples": 278,
+                "endOffsetSamples": 447,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00694,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 533,
+                "startOffsetSamples": 447,
+                "endOffsetSamples": 618,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.0075,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 703,
+                "startOffsetSamples": 618,
+                "endOffsetSamples": 787,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00998,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 870,
+                "startOffsetSamples": 787,
+                "endOffsetSamples": 959,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00773,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1048,
+                "startOffsetSamples": 959,
+                "endOffsetSamples": 1131,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.00835,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1213,
+                "startOffsetSamples": 1131,
+                "endOffsetSamples": 1301,
+                "durationSeconds": 0.85,
+                "dtwDistance": 0.00935,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1388,
+                "startOffsetSamples": 1301,
+                "endOffsetSamples": 1473,
+                "durationSeconds": 0.86,
+                "dtwDistance": 0.01182,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1557,
+                "startOffsetSamples": 1473,
+                "endOffsetSamples": 1642,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00972,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1727,
+                "startOffsetSamples": 1642,
+                "endOffsetSamples": 1811,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00499,
+                "verdict": "accepted"
+              }
+            ]
           }
         },
         {
@@ -2420,6 +4962,160 @@
           "comparison": {
             "matchedPeaks": 10,
             "medianTimingShiftMilliseconds": 5
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 8,
+            "candidateBeatCount": 8,
+            "medianDtwDistance": 0.01347,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 8,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 189,
+                "startOffsetSamples": 105,
+                "endOffsetSamples": 271,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00847,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 352,
+                "startOffsetSamples": 271,
+                "endOffsetSamples": 431,
+                "durationSeconds": 0.8,
+                "dtwDistance": 0.01015,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 510,
+                "startOffsetSamples": 431,
+                "endOffsetSamples": 594,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.00682,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 678,
+                "startOffsetSamples": 594,
+                "endOffsetSamples": 761,
+                "durationSeconds": 0.835,
+                "dtwDistance": 0.02028,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 843,
+                "startOffsetSamples": 761,
+                "endOffsetSamples": 925,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.006,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1006,
+                "startOffsetSamples": 925,
+                "endOffsetSamples": 1087,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.01678,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1167,
+                "startOffsetSamples": 1087,
+                "endOffsetSamples": 1249,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.02386,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1330,
+                "startOffsetSamples": 1249,
+                "endOffsetSamples": 1411,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.02512,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 8,
+            "candidateBeatCount": 8,
+            "medianDtwDistance": 0.00948,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 8,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 190,
+                "startOffsetSamples": 106,
+                "endOffsetSamples": 272,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.00954,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 353,
+                "startOffsetSamples": 272,
+                "endOffsetSamples": 433,
+                "durationSeconds": 0.805,
+                "dtwDistance": 0.0076,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 512,
+                "startOffsetSamples": 433,
+                "endOffsetSamples": 596,
+                "durationSeconds": 0.815,
+                "dtwDistance": 0.00758,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 679,
+                "startOffsetSamples": 596,
+                "endOffsetSamples": 762,
+                "durationSeconds": 0.83,
+                "dtwDistance": 0.01195,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 844,
+                "startOffsetSamples": 762,
+                "endOffsetSamples": 926,
+                "durationSeconds": 0.82,
+                "dtwDistance": 0.00358,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1007,
+                "startOffsetSamples": 926,
+                "endOffsetSamples": 1088,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00943,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1168,
+                "startOffsetSamples": 1088,
+                "endOffsetSamples": 1250,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.00975,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1331,
+                "startOffsetSamples": 1250,
+                "endOffsetSamples": 1412,
+                "durationSeconds": 0.81,
+                "dtwDistance": 0.01589,
+                "verdict": "accepted"
+              }
+            ]
           }
         },
         {
@@ -2597,6 +5293,192 @@
           "comparison": {
             "matchedPeaks": 12,
             "medianTimingShiftMilliseconds": 5
+          },
+          "rawBeatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 10,
+            "candidateBeatCount": 10,
+            "medianDtwDistance": 0.0121,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 10,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 298,
+                "startOffsetSamples": 214,
+                "endOffsetSamples": 385,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.03054,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 471,
+                "startOffsetSamples": 385,
+                "endOffsetSamples": 553,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.03197,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 635,
+                "startOffsetSamples": 553,
+                "endOffsetSamples": 722,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.03837,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 809,
+                "startOffsetSamples": 722,
+                "endOffsetSamples": 896,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.02388,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 982,
+                "startOffsetSamples": 896,
+                "endOffsetSamples": 1065,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01059,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1147,
+                "startOffsetSamples": 1065,
+                "endOffsetSamples": 1233,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00977,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1319,
+                "startOffsetSamples": 1233,
+                "endOffsetSamples": 1406,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00854,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1492,
+                "startOffsetSamples": 1406,
+                "endOffsetSamples": 1577,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00847,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1661,
+                "startOffsetSamples": 1577,
+                "endOffsetSamples": 1745,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01216,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1829,
+                "startOffsetSamples": 1745,
+                "endOffsetSamples": 1913,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01204,
+                "verdict": "accepted"
+              }
+            ]
+          },
+          "beatAtlas": {
+            "available": true,
+            "method": "adaptive_beat_atlas_dynamic_time_warping",
+            "templateLengthSamples": 120,
+            "templateBeatCount": 10,
+            "candidateBeatCount": 10,
+            "medianDtwDistance": 0.00933,
+            "dtwThreshold": 0.06,
+            "acceptedBeatCount": 10,
+            "reviewBeatCount": 0,
+            "beats": [
+              {
+                "peakOffsetSamples": 299,
+                "startOffsetSamples": 215,
+                "endOffsetSamples": 386,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.01526,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 472,
+                "startOffsetSamples": 386,
+                "endOffsetSamples": 554,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.01595,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 636,
+                "startOffsetSamples": 554,
+                "endOffsetSamples": 723,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.01884,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 810,
+                "startOffsetSamples": 723,
+                "endOffsetSamples": 897,
+                "durationSeconds": 0.87,
+                "dtwDistance": 0.01367,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 983,
+                "startOffsetSamples": 897,
+                "endOffsetSamples": 1066,
+                "durationSeconds": 0.845,
+                "dtwDistance": 0.00794,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1148,
+                "startOffsetSamples": 1066,
+                "endOffsetSamples": 1234,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00968,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1320,
+                "startOffsetSamples": 1234,
+                "endOffsetSamples": 1407,
+                "durationSeconds": 0.865,
+                "dtwDistance": 0.00659,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1493,
+                "startOffsetSamples": 1407,
+                "endOffsetSamples": 1578,
+                "durationSeconds": 0.855,
+                "dtwDistance": 0.00774,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1662,
+                "startOffsetSamples": 1578,
+                "endOffsetSamples": 1746,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.0077,
+                "verdict": "accepted"
+              },
+              {
+                "peakOffsetSamples": 1830,
+                "startOffsetSamples": 1746,
+                "endOffsetSamples": 1914,
+                "durationSeconds": 0.84,
+                "dtwDistance": 0.00899,
+                "verdict": "accepted"
+              }
+            ]
           }
         }
       ],

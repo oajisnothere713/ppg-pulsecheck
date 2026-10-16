@@ -52,6 +52,10 @@ The expected result is fewer non-physiological local maxima with little change i
 
 The approach would be considered unsuccessful for a timing use case if the accepted peak count became unstable, if matched peak shifts became large relative to the required timing precision, or if peaks near window edges dominated the result. An additional check is manual or independently coded beat matching on several clean and contaminated windows, ideally against a reference channel.
 
+### Independent morphology check: adaptive beat atlas
+
+As a second, non-filtering quality gate, the pipeline builds a local template from plausibly timed beats, amplitude-normalizes each beat, and measures constrained dynamic-time-warping (DTW) distance to the template. On the raw trace, this flags four morphologically inconsistent S4 candidates at approximately 2.19, 4.74, 11.49, and 13.94 s; these correspond to short extra candidates created by periodic interference. The same gate reports zero inconsistent beats after filtering. This agreement supports the timing-focused mitigation, but it is not proof that the filtered waveform retains all morphology-dependent information.
+
 ## Q1C — Sampling and spectrum thought experiment
 
 At a 200 Hz sample rate, the Nyquist frequency is 100 Hz. Useful 0–30 Hz content, a 10 Hz disturbance, and 8–12 Hz motion sidebands all appear at their true frequencies below Nyquist. The 8–12 Hz region overlaps potentially useful signal content, so a blanket 10 Hz notch can also remove pulse-shape information.

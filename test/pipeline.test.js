@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { analyzeDocument, validateAndReconstruct, zeroPhaseBandPass } = require('../src/pipeline');
+const { analyzeDocument, validateAndReconstruct, zeroPhaseBandPass, dynamicTimeWarpingDistance, assessBeatAtlas } = require('../src/pipeline');
 
 function packet(sequence, firstSampleIndex, values) {
   return { sequence, first_sample_index: firstSampleIndex, sample_count: values.length, values };
@@ -41,4 +41,20 @@ test('a stream with missing packet samples is rejected as a full recording', () 
   };
   const report = analyzeDocument(document, { minimumUsableSeconds: 0.2, flatlineMinimumSamples: 10, firTaps: 21, qualityWindowSeconds: 0.5 });
   assert.equal(report.recordings[0].verdict, 'rejected_as_full_recording');
+});
+
+test('the adaptive beat atlas accepts repeated morphology and reviews a distorted beat', () => {
+  const cleanBeat = [0, 0.2, 0.8, 1, 0.6, 0.2, 0];
+  const distortedBeat = [0, 0.95, 0.1, 1, 0.15, 0.9, 0];
+  assert.equal(dynamicTimeWarpingDistance(cleanBeat, cleanBeat, 0.2), 0);
+  const values = [...cleanBeat, ...cleanBeat, ...cleanBeat, ...distortedBeat, ...cleanBeat, ...cleanBeat];
+  const peaks = [3, 10, 17, 24, 31, 38];
+  const atlas = assessBeatAtlas(values, peaks, 10, {
+    beatAtlasLengthSamples: 7,
+    beatAtlasWarpFraction: 0.2,
+    beatAtlasMinimumDtwThreshold: 0.05,
+    beatAtlasMadMultiplier: 2
+  });
+  assert.equal(atlas.available, true);
+  assert.ok(atlas.reviewBeatCount >= 1);
 });

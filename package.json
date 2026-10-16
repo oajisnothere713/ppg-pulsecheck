@@ -7,7 +7,16 @@
   "scripts": {
     "analyze": "node src/cli.js",
     "visualize": "node src/visualize.js",
-    "test": "node --test"
+    "test": "node --test",
+    "dev": "concurrently -k -n API,WEB -c blue,magenta \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "node server/index.js",
+    "dev:web": "vite --host 127.0.0.1 --open",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "vite": "^6.1.0"
   },
   "engines": {
     "node": ">=20"

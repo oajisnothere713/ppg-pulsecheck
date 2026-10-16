@@ -10,7 +10,8 @@ It is an engineering assessment tool, not a diagnostic device.
 3. Splits the remaining data into contiguous usable segments.
 4. Applies window-level quality gates for excess low-frequency energy, high-frequency energy, and impulsive derivatives.
 5. Applies a documented zero-phase, windowed-sinc FIR band-pass (0.4–12 Hz by default) only to usable segments.
-6. Compares raw and filtered pulse metrics and writes an inspectable JSON audit report.
+6. Builds an adaptive beat atlas and uses constrained dynamic-time-warping distance to review morphologically inconsistent beats.
+7. Compares raw and filtered pulse metrics and writes an inspectable JSON audit report.
 
 The original input file is never modified. A recording with missing packet data is marked `rejected_as_full_recording`, even if valid segments on either side are still described.
 
@@ -26,7 +27,20 @@ npm run visualize -- --input "C:\Users\insti\Desktop\MayaCardio_Signal_Processin
 
 Open `visual-report.html` in a browser to inspect all raw streams, every excluded interval and review window, and the S4 before/after filtering comparison.
 
-`CASE_STUDY.md` is the evidence-backed first draft for the written sections of the supplied case brief. It is deliberately explicit about which conclusions are data-quality findings and which need further controlled testing.
+## Evaluation website
+
+The dashboard runs the Node API and Vite front end concurrently with one command:
+
+```powershell
+npm install
+npm run dev
+```
+
+The command starts both services and opens [http://127.0.0.1:5173](http://127.0.0.1:5173) automatically. The backend automatically looks for the supplied JSON at `C:\Users\insti\Desktop\MayaCardio_Signal_Processing_Case_Data_ppg.json`. For a different location, set `PPG_INPUT_PATH` before starting the command or place the file at `data\case-data.json`.
+
+The dashboard is intentionally presentation-only: it reads the same quality-gated analysis report rather than reproducing hidden processing in the browser.
+
+`CASE_STUDY.md` is the evidence-backed first draft for the written sections of the supplied case brief. It is deliberately explicit about which conclusions are data-quality findings and which need further controlled testing. `findings.md` is the companion project narrative: it explains the implementation choices, the per-stream evidence, the S2/S4 comparison, dashboard interactions, limitations, and reproduction steps.
 
 ## Python visualizations
 

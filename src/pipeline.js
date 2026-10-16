@@ -12,7 +12,11 @@ const DEFAULTS = Object.freeze({
   maximumLowFrequencyRatio: 0.35,
   maximumDerivativeOutlierRatio: 20,
   peakMinimumDistanceSeconds: 0.4,
-  peakProminenceFraction: 0.15
+  peakProminenceFraction: 0.15,
+  beatAtlasLengthSamples: 120,
+  beatAtlasWarpFraction: 0.2,
+  beatAtlasMinimumDtwThreshold: 0.06,
+  beatAtlasMadMultiplier: 4
 });
 
 function median(values) {
@@ -331,6 +335,110 @@ function pulseMetrics(values, peaks, samplingRateHz) {
   };
 }
 
+function resampleLinear(values, targetLength) {
+  if (values.length === targetLength) return [...values];
+  if (values.length === 1) return Array(targetLength).fill(values[0]);
+  return Array.from({ length: targetLength }, (_, index) => {
+    const position = (index * (values.length - 1)) / (targetLength - 1);
+    const lower = Math.floor(position);
+    const upper = Math.ceil(position);
+    const weight = position - lower;
+    return values[lower] * (1 - weight) + values[upper] * weight;
+  });
+}
+
+function normalizeBeat(values) {
+  const lower = Math.min(...values);
+  const upper = Math.max(...values);
+  const range = upper - lower;
+  return range > Number.EPSILON ? values.map((value) => (value - lower) / range) : null;
+}
+
+function medianTemplate(beats, length) {
+  return Array.from({ length }, (_, index) => median(beats.map((beat) => beat[index])));
+}
+
+/**
+ * Returns the root mean-square dynamic-time-warping distance. The Sakoe-Chiba
+ * band prevents implausible warps from making an artifact appear template-like.
+ */
+function dynamicTimeWarpingDistance(reference, candidate, warpFraction) {
+  const length = reference.length;
+  const band = Math.max(1, Math.ceil(length * warpFraction));
+  let previousCost = Array(length + 1).fill(Infinity);
+  let previousSteps = Array(length + 1).fill(0);
+  previousCost[0] = 0;
+  for (let row = 1; row <= length; row += 1) {
+    const currentCost = Array(length + 1).fill(Infinity);
+    const currentSteps = Array(length + 1).fill(0);
+    const start = Math.max(1, row - band);
+    const end = Math.min(length, row + band);
+    for (let column = start; column <= end; column += 1) {
+      const options = [
+        [previousCost[column], previousSteps[column]],
+        [currentCost[column - 1], currentSteps[column - 1]],
+        [previousCost[column - 1], previousSteps[column - 1]]
+      ].filter(([cost]) => Number.isFinite(cost));
+      const [bestCost, bestSteps] = options.reduce((best, option) => (option[0] < best[0] ? option : best));
+      currentCost[column] = bestCost + (reference[row - 1] - candidate[column - 1]) ** 2;
+      currentSteps[column] = bestSteps + 1;
+    }
+    previousCost = currentCost;
+    previousSteps = currentSteps;
+  }
+  return Math.sqrt(previousCost[length] / previousSteps[length]);
+}
+
+/**
+ * Builds a patient/recording-local morphology atlas from plausible beat lengths.
+ * It scores shape only: each beat is amplitude-normalized before comparison.
+ */
+function assessBeatAtlas(values, peaks, samplingRateHz, config) {
+  if (peaks.length < 4) return { available: false, reason: 'fewer_than_four_detected_peaks' };
+  const durations = peaks.slice(1).map((peak, index) => (peak - peaks[index]) / samplingRateHz);
+  const typicalDuration = median(durations);
+  const candidates = [];
+  for (let peakIndex = 1; peakIndex < peaks.length - 1; peakIndex += 1) {
+    const start = Math.round((peaks[peakIndex - 1] + peaks[peakIndex]) / 2);
+    const end = Math.round((peaks[peakIndex] + peaks[peakIndex + 1]) / 2);
+    const duration = (end - start) / samplingRateHz;
+    const normalized = normalizeBeat(resampleLinear(values.slice(start, end), config.beatAtlasLengthSamples));
+    if (normalized) candidates.push({ peakOffsetSamples: peaks[peakIndex], startOffsetSamples: start, endOffsetSamples: end, durationSeconds: duration, normalized });
+  }
+  const seeds = candidates.filter((beat) => beat.durationSeconds >= typicalDuration * 0.65 && beat.durationSeconds <= typicalDuration * 1.35);
+  if (seeds.length < 3) return { available: false, reason: 'fewer_than_three_plausible_template_beats' };
+  const template = medianTemplate(seeds.map((beat) => beat.normalized), config.beatAtlasLengthSamples);
+  const scored = candidates.map((beat) => ({
+    ...beat,
+    dtwDistance: dynamicTimeWarpingDistance(template, beat.normalized, config.beatAtlasWarpFraction)
+  }));
+  const distances = scored.map((beat) => beat.dtwDistance);
+  const distanceMedian = median(distances);
+  const distanceMad = median(distances.map((distance) => Math.abs(distance - distanceMedian)));
+  const threshold = Math.max(
+    config.beatAtlasMinimumDtwThreshold,
+    distanceMedian + (config.beatAtlasMadMultiplier * 1.4826 * (distanceMad || 0))
+  );
+  const beats = scored.map(({ normalized, ...beat }) => ({
+    ...beat,
+    durationSeconds: round(beat.durationSeconds, 4),
+    dtwDistance: round(beat.dtwDistance, 5),
+    verdict: beat.dtwDistance <= threshold ? 'accepted' : 'review'
+  }));
+  return {
+    available: true,
+    method: 'adaptive_beat_atlas_dynamic_time_warping',
+    templateLengthSamples: config.beatAtlasLengthSamples,
+    templateBeatCount: seeds.length,
+    candidateBeatCount: beats.length,
+    medianDtwDistance: round(distanceMedian, 5),
+    dtwThreshold: round(threshold, 5),
+    acceptedBeatCount: beats.filter((beat) => beat.verdict === 'accepted').length,
+    reviewBeatCount: beats.filter((beat) => beat.verdict === 'review').length,
+    beats
+  };
+}
+
 function comparePeakLocations(before, after, samplingRateHz) {
   if (!before.length || !after.length) return { matchedPeaks: 0, medianTimingShiftMilliseconds: null };
   const shifts = before.map((peak) => Math.min(...after.map((other) => Math.abs(other - peak))));
@@ -367,6 +475,8 @@ function analyzeSegment(segment, samplingRateHz, config) {
   const filtered = zeroPhaseBandPass(segment.values, samplingRateHz, config);
   const rawPeaks = findPeaks(segment.values, samplingRateHz, config);
   const filteredPeaks = findPeaks(filtered, samplingRateHz, config);
+  const rawBeatAtlas = assessBeatAtlas(segment.values, rawPeaks, samplingRateHz, config);
+  const beatAtlas = assessBeatAtlas(filtered, filteredPeaks, samplingRateHz, config);
   return {
     startSample: segment.startSample,
     endSample: segment.endSample,
@@ -380,7 +490,9 @@ function analyzeSegment(segment, samplingRateHz, config) {
     },
     before: pulseMetrics(segment.values, rawPeaks, samplingRateHz),
     after: pulseMetrics(filtered, filteredPeaks, samplingRateHz),
-    comparison: comparePeakLocations(rawPeaks, filteredPeaks, samplingRateHz)
+    comparison: comparePeakLocations(rawPeaks, filteredPeaks, samplingRateHz),
+    rawBeatAtlas,
+    beatAtlas
   };
 }
 
@@ -448,5 +560,7 @@ module.exports = {
   contiguousUsableSegments,
   zeroPhaseBandPass,
   findPeaks,
+  dynamicTimeWarpingDistance,
+  assessBeatAtlas,
   qualityMetrics
 };
